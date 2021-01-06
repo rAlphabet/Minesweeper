@@ -72,3 +72,5 @@ def create_grid(width, height):
     """Creates a grid with the given width and height."""
     return [[0 for i in range(width)] for j in range(height)]
 
+
+#Objects - object Cell
