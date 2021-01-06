@@ -138,3 +138,6 @@ image_6 = pygame.transform.scale(image_6, (OBJ_WIDTH, OBJ_HEIGHT))
 image_7 = pygame.transform.scale(image_7, (OBJ_WIDTH, OBJ_HEIGHT))
 image_8 = pygame.transform.scale(image_8, (OBJ_WIDTH, OBJ_HEIGHT))
 
+#Creating a dictionary of values and corresponding images.
+DICT = {0: image_0, 1: image_1, 2: image_2, 3: image_3, 4: image_4, 5: image_5, 6: image_6, 7: image_7, 8: image_8, "X": mine_image}
+
