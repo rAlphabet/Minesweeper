@@ -74,3 +74,16 @@ def create_grid(width, height):
 
 
 #Objects - object Cell
+class Cell:
+    def __init__(self, x, y, value, width = OBJ_WIDTH, height = OBJ_HEIGHT, hidden = True):
+        self.x = x
+        self.y = y
+        self.pos_x = x // (OBJ_WIDTH + 2)
+        self.pos_y = y // (OBJ_HEIGHT + 2)
+        self.width = width
+        self.height = height
+        self.value = value
+        self.hidden = hidden
+        self.marked = False
+    
+    
