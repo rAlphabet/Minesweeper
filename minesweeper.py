@@ -300,7 +300,7 @@ while running:
                     if event.button == 1:
                         if not has_activated_timer:
                             has_activated_timer = True
-                        # functionality missing
+                        cell.check_cell()
                     elif event.button == 3:
                         cell.marked = not cell.marked
 
