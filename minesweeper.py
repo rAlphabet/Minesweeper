@@ -212,3 +212,5 @@ def restart_game():
     cells = start_cells(grid)
     list_of_cells = start_list_cells(cells)
 
+
+#Game loop.
