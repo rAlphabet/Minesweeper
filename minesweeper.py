@@ -15,3 +15,9 @@ FPS = 24
 
 
 #Algorithms for minesweeper's grid.
+def is_mine(x, y, grid):
+    """Checks if (x, y) position in the grid is a mine."""
+    if grid[y][x] == MINE:
+        return True
+    else: return False
+
