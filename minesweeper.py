@@ -122,6 +122,15 @@ class Cell:
             if self.value == MINE:
                 self.game_over()
 
+    def game_over(self):
+        global has_activated_timer
+        has_activated_timer = False
+        mixer.music.stop()
+        kill_sound.play()
+        for cell in list_of_cells:
+            if cell.value == MINE:
+                cell.reveal()
+
 
 #Functions for game functionality.
 def timer():
