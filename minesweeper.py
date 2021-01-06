@@ -50,3 +50,8 @@ def prepare_grid(grid, copy = True):
             for x in range(dim(grid)["x"]):
                 grid[y][x] = surrounding_mines(x, y, grid)
 
+def probability_array(density):
+    """Creates a probability array of values True and False"""
+    density *= 100
+    return [True if i < density else False for i in range(100)]
+
