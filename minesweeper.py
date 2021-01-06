@@ -312,4 +312,5 @@ while running:
     
     instructions()
     reveal_all()
+    is_finished()
     
