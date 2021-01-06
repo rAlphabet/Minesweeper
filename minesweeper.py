@@ -311,4 +311,5 @@ while running:
         timer()
     
     instructions()
+    reveal_all()
     
