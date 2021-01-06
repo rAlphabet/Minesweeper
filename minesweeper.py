@@ -152,3 +152,10 @@ GAME_OVER = False
 GAME_WIN = False
 REVEALED = False
 
+#Music and sounds.
+mixer.music.load(FILES + r"\background.wav")
+mixer.music.play(-1)
+kill_sound = mixer.Sound(FILES + r"\kill.wav")
+winner_sound = mixer.Sound(FILES + r"\game_winner.wav")
+has_played_winner_sound = False
+
