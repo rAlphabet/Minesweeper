@@ -100,4 +100,6 @@ class Cell:
             if self.value != 0:
                 screen.blit(self.img, (self.x, self.y))
     
-    
+    def reveal(self):
+        self.hidden = False
+
