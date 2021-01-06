@@ -109,6 +109,19 @@ class Cell:
     def is_empty(self):
         return self.value == 0
 
+    def check_cell(self):
+        if self.value == 0:
+            self.reveal()
+            neighbours = [(self.pos_x+i, self.pos_y+j) for i in range(-1, 2) for j in range(-1, 2) if (self.pos_x, self.pos_y) != (self.pos_x+i, self.pos_y+j) and is_in_grid(self.pos_x+i, self.pos_y+j, grid)]
+            for coordinates in neighbours:
+                neighbour_cell = cells[coordinates[1]][coordinates[0]]
+                if neighbour_cell.hidden:
+                    neighbour_cell.check_cell()
+        else:
+            self.reveal()
+            if self.value == MINE:
+                self.game_over()
+
 
 #Functions for game functionality.
 def timer():
