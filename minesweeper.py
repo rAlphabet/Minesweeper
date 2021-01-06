@@ -124,4 +124,5 @@ image_5 = pygame.image.load(FILES + r"\5.png")
 image_6 = pygame.image.load(FILES + r"\6.png")
 image_7 = pygame.image.load(FILES + r"\7.png")
 image_8 = pygame.image.load(FILES + r"\8.png")
+icon = pygame.image.load(FILES + r"\mine.png")
 
