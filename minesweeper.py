@@ -159,3 +159,13 @@ kill_sound = mixer.Sound(FILES + r"\kill.wav")
 winner_sound = mixer.Sound(FILES + r"\game_winner.wav")
 has_played_winner_sound = False
 
+#Font and text.
+font = pygame.font.SysFont("Arial", 28)
+white = (255, 255, 255)
+space_text = font.render("SPACE:", True, white)
+restart_text = font.render("Restart", True, white)
+enter_text = font.render("ENTER:", True, white)
+reveal_text = font.render("Show Mines", True, white)
+rmb_text = font.render("RMB:", True, white)
+flag_text = font.render("Flag", True, white)
+
