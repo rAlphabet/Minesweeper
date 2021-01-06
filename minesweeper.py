@@ -86,4 +86,18 @@ class Cell:
         self.hidden = hidden
         self.marked = False
     
+    def blit(self):
+        if self.hidden:
+            if self.marked:
+                pygame.draw.rect(screen, (0, 0, 250), (self.x, self.y, self.width, self.height))
+            else:
+                pygame.draw.rect(screen, (255, 255, 255), (self.x, self.y, self.width, self.height))
+        elif self.value == MINE:
+            pygame.draw.rect(screen, (255, 0, 0), (self.x, self.y, self.width, self.height))
+            screen.blit(self.img, (self.x, self.y))
+        else:
+            pygame.draw.rect(screen, (180, 180, 180), (self.x, self.y, self.width, self.height))
+            if self.value != 0:
+                screen.blit(self.img, (self.x, self.y))
+    
     
