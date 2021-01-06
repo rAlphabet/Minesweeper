@@ -21,3 +21,8 @@ def is_mine(x, y, grid):
         return True
     else: return False
 
+def dim(grid):
+    """Returns a dictionary with keys 'x' and 'y' and
+    values width and height of the given grid."""
+    return {"x": len(grid[0]), "y": len(grid)}
+
