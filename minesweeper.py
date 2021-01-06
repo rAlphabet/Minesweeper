@@ -68,3 +68,7 @@ def distribute_mines(grid, density = 0.12, copy = True):
                 if random.choice(prob):
                     grid[y][x] = MINE
 
+def create_grid(width, height):
+    """Creates a grid with the given width and height."""
+    return [[0 for i in range(width)] for j in range(height)]
+
