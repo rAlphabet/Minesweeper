@@ -26,3 +26,9 @@ def dim(grid):
     values width and height of the given grid."""
     return {"x": len(grid[0]), "y": len(grid)}
 
+def is_in_grid(x, y, grid):
+    """Checks if (x, y) position is inside the grid."""
+    if 0 <= x < dim(grid)["x"] and 0 <= y < dim(grid)["y"]:
+        return True
+    else: return False
+
