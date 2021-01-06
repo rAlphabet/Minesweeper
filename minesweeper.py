@@ -169,3 +169,15 @@ reveal_text = font.render("Show Mines", True, white)
 rmb_text = font.render("RMB:", True, white)
 flag_text = font.render("Flag", True, white)
 
+#Instructions
+def instructions():
+    pygame.draw.rect(screen, (0, 0, 0), (WIDTH - 200, 0, WIDTH, HEIGHT))
+    stopwatch = font.render(f"TIME: {TIMER[1]}", True, white)
+    screen.blit(stopwatch, (WIDTH - 175, 60))
+    screen.blit(space_text, (WIDTH - 175, 170))
+    screen.blit(restart_text, (WIDTH - 175, 202))
+    screen.blit(rmb_text, (WIDTH - 175, 295))
+    screen.blit(flag_text, (WIDTH - 175, 327))
+    screen.blit(enter_text, (WIDTH - 175, 480))
+    screen.blit(reveal_text, (WIDTH - 175, 512))
+
