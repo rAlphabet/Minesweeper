@@ -110,6 +110,16 @@ class Cell:
         return self.value == 0
 
 
+#Functions for game functionality.
+def timer():
+    global TIMER
+    TIMER[0] += 1
+    if TIMER[0] == FPS:
+        TIMER[0] = 0
+        TIMER[1] += 1
+
+
+
 #Initialization.
 pygame.init()
 
