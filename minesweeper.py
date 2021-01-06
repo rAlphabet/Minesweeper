@@ -103,3 +103,6 @@ class Cell:
     def reveal(self):
         self.hidden = False
 
+    def is_mine(self):
+        return self.value == MINE
+
