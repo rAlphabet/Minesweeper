@@ -242,3 +242,6 @@ while running:
                     elif event.button == 3:
                         cell.marked = not cell.marked
 
+    for cell in list_of_cells:
+        cell.blit()
+
