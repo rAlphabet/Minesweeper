@@ -55,3 +55,16 @@ def probability_array(density):
     density *= 100
     return [True if i < density else False for i in range(100)]
 
+def distribute_mines(grid, density = 0.12, copy = True):
+    """Distributes mines to the grid. If copy is set to True,
+    the function returns new grid with distributed mines.
+    Density decides how much % of the grid should be mines."""
+    prob = probability_array(density)
+    if copy:
+        return [[MINE if random.choice(prob) else 0 for x in range(dim(grid)["x"])] for y in range(dim(grid)["y"])]
+    else:
+        for y in range(dim(grid)["y"]):
+            for x in range(dim(grid)["x"]):
+                if random.choice(prob):
+                    grid[y][x] = MINE
+
