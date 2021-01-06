@@ -85,7 +85,8 @@ class Cell:
         self.value = value
         self.hidden = hidden
         self.marked = False
-    
+        self.img = DICT[value]
+   
     def blit(self):
         if self.hidden:
             if self.marked:
