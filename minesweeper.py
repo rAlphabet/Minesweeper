@@ -214,3 +214,5 @@ def restart_game():
 
 
 #Game loop.
+restart_game()
+
