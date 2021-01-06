@@ -109,3 +109,7 @@ class Cell:
     def is_empty(self):
         return self.value == 0
 
+
+#Initialization.
+pygame.init()
+
