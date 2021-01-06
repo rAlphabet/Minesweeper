@@ -190,3 +190,25 @@ def start_cells(grid):
 def start_list_cells(cells):
     return [cells[j][i] for i in range(dim(grid)["x"]) for j in range(dim(grid)["y"])]
 
+#Game start and restart.
+def restart_game():
+    mixer.music.play(-1)
+    global TIMER
+    global has_activated_timer
+    global GAME_OVER
+    global GAME_WIN
+    global REVEALED
+    global has_played_winner_sound
+    global grid
+    global cells
+    global list_of_cells
+    TIMER = [0, 0]
+    has_activated_timer = False
+    GAME_OVER = False
+    GAME_WIN = False
+    REVEALED = False
+    has_played_winner_sound = False
+    grid = start_grid()
+    cells = start_cells(grid)
+    list_of_cells = start_list_cells(cells)
+
