@@ -39,3 +39,14 @@ def surrounding_mines(x, y, grid):
         return MINE
     return sum(1 for i in range(-1, 2) for j in range(-1, 2) if (x, y) != (x+i, y+j) and is_in_grid(x+i, y+j, grid) and is_mine(x+i, y+j, grid))
 
+def prepare_grid(grid, copy = True):
+    """Prepares the grid, so it has all the attributes:
+    mines, empty spaces, numbers. If copy is set to True,
+    the function returns new prepared grid."""
+    if copy:
+        return [[surrounding_mines(x, y, grid) for x in range(dim(grid)["x"])] for y in range(dim(grid)["y"])]
+    else:
+        for y in range(dim(grid)["y"]):
+            for x in range(dim(grid)["x"]):
+                grid[y][x] = surrounding_mines(x, y, grid)
+
