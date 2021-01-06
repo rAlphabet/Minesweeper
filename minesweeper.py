@@ -126,3 +126,15 @@ image_7 = pygame.image.load(FILES + r"\7.png")
 image_8 = pygame.image.load(FILES + r"\8.png")
 icon = pygame.image.load(FILES + r"\mine.png")
 
+#Resizing the images.
+mine_image = pygame.transform.scale(mine_image, (OBJ_WIDTH, OBJ_HEIGHT))
+image_0 = pygame.transform.scale(image_0, (OBJ_WIDTH, OBJ_HEIGHT))
+image_1 = pygame.transform.scale(image_1, (OBJ_WIDTH, OBJ_HEIGHT))
+image_2 = pygame.transform.scale(image_2, (OBJ_WIDTH, OBJ_HEIGHT))
+image_3 = pygame.transform.scale(image_3, (OBJ_WIDTH, OBJ_HEIGHT))
+image_4 = pygame.transform.scale(image_4, (OBJ_WIDTH, OBJ_HEIGHT))
+image_5 = pygame.transform.scale(image_5, (OBJ_WIDTH, OBJ_HEIGHT))
+image_6 = pygame.transform.scale(image_6, (OBJ_WIDTH, OBJ_HEIGHT))
+image_7 = pygame.transform.scale(image_7, (OBJ_WIDTH, OBJ_HEIGHT))
+image_8 = pygame.transform.scale(image_8, (OBJ_WIDTH, OBJ_HEIGHT))
+
