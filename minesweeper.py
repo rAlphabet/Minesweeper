@@ -32,3 +32,10 @@ def is_in_grid(x, y, grid):
         return True
     else: return False
 
+def surrounding_mines(x, y, grid):
+    f"""Counts and returns mines around (x, y) position if (x, y) is not a mine.
+    If (x, y) is a mine, it returns MINE ({MINE})."""
+    if is_mine(x, y, grid):
+        return MINE
+    return sum(1 for i in range(-1, 2) for j in range(-1, 2) if (x, y) != (x+i, y+j) and is_in_grid(x+i, y+j, grid) and is_mine(x+i, y+j, grid))
+
