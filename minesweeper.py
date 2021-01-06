@@ -126,6 +126,27 @@ def reveal_all():
                 pygame.draw.rect(screen, (180, 180, 180), (cell.x, cell.y, cell.width, cell.height))
                 screen.blit(mine_image, (cell.x, cell.y))
 
+def is_finished():
+    """Checks if player has won.
+    If he has, it shows all the mines"""
+    ANY_HIDDEN = False
+    global has_played_winner_sound
+    global has_activated_timer
+    for cell in list_of_cells:
+        if cell.value != MINE:
+            if cell.hidden:
+                ANY_HIDDEN = ANY_HIDDEN or cell.hidden
+                break
+    if not ANY_HIDDEN:
+        has_activated_timer = False
+        mixer.music.stop()
+        for cell in list_of_cells:
+            if cell.value == MINE:
+                if not has_played_winner_sound:
+                    winner_sound.play()
+                    has_played_winner_sound = True
+                pygame.draw.rect(screen, (0, 255, 0), (cell.x, cell.y, cell.width, cell.height))
+                screen.blit(mine_image, (cell.x, cell.y))
 
 
 #Initialization.
