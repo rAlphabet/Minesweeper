@@ -181,3 +181,7 @@ def instructions():
     screen.blit(enter_text, (WIDTH - 175, 480))
     screen.blit(reveal_text, (WIDTH - 175, 512))
 
+#Initialization of the grid and the cells.
+def start_grid():
+    return prepare_grid(distribute_mines(create_grid(MS_WIDTH, MS_HEIGHT)))
+
