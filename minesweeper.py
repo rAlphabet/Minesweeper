@@ -106,3 +106,6 @@ class Cell:
     def is_mine(self):
         return self.value == MINE
 
+    def is_empty(self):
+        return self.value == 0
+
