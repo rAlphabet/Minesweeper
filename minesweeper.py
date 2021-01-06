@@ -118,6 +118,14 @@ def timer():
         TIMER[0] = 0
         TIMER[1] += 1
 
+def reveal_all():
+    if REVEALED:
+        for cell in list_of_cells:
+            if cell.value == MINE:
+                mixer.music.stop()
+                pygame.draw.rect(screen, (180, 180, 180), (cell.x, cell.y, cell.width, cell.height))
+                screen.blit(mine_image, (cell.x, cell.y))
+
 
 
 #Initialization.
