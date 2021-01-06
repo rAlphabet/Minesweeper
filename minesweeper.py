@@ -217,3 +217,6 @@ def restart_game():
 restart_game()
 
 running = True
+while running:
+    CLOCK.tick(FPS)
+
