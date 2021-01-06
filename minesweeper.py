@@ -309,4 +309,6 @@ while running:
 
     if has_activated_timer:
         timer()
-
+    
+    instructions()
+    
