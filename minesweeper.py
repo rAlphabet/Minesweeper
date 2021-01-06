@@ -307,3 +307,6 @@ while running:
     for cell in list_of_cells:
         cell.blit()
 
+    if has_activated_timer:
+        timer()
+
