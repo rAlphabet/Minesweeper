@@ -13,3 +13,5 @@ SIZE = WIDTH, HEIGHT = MS_WIDTH * (OBJ_WIDTH + 2) + 200, MS_HEIGHT * (OBJ_HEIGHT
 CAPTION = "Minesweeper"
 FPS = 24
 
+
+#Algorithms for minesweeper's grid.
