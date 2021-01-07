@@ -11,6 +11,7 @@ class Settings:
         self.size = new_size
     
     def set_img(self, img):
+        """Sets the self.img to a specific image."""
         self.img = img
 
     def blit(self, img, width_of_grid):
