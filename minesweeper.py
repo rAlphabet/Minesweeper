@@ -268,6 +268,8 @@ def start_list_cells(cells):
 
 #Game start and restart.
 def restart_game():
+    """Restarts the game with setting certain variables to their initial values
+    and creating a new grid along with new Cell objects."""
     mixer.music.play(-1)
     global TIMER
     global has_activated_timer
