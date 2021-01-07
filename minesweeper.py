@@ -112,6 +112,7 @@ class Cell:
         return self.value == MINE
 
     def is_empty(self):
+        """Checks if this cell is an empty one."""
         return self.value == 0
 
     def check_cell(self):
