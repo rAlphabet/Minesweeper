@@ -131,6 +131,7 @@ class Cell:
                 self.game_over()
 
     def game_over(self):
+        """Ends the game with setting certain variables to their initial values."""
         global has_activated_timer
         has_activated_timer = False
         mixer.music.stop()
