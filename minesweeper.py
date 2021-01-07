@@ -161,6 +161,7 @@ def reveal_all():
 
 def is_finished():
     """Checks if player has won. If he has, it shows all the mines."""
+    global GAME_WIN
     ANY_HIDDEN = False
     global has_played_winner_sound
     global has_activated_timer
@@ -170,11 +171,11 @@ def is_finished():
                 ANY_HIDDEN = ANY_HIDDEN or cell.hidden
                 break
     if not ANY_HIDDEN:
+        GAME_WIN = True
         has_activated_timer = False
         mixer.music.stop()
         for cell in list_of_cells:
             if cell.value == MINE:
-                GAME_WIN = True
                 if not has_played_winner_sound:
                     winner_sound.play()
                     has_played_winner_sound = True
