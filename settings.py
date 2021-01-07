@@ -4,6 +4,7 @@ class Settings:
         self.size = 9
         self.x_left = 164
         self.y = 128
+        self.img = None
     
     def change_size(self, new_size):
         """Changes the size (of the grid)."""
