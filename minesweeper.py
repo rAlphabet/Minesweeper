@@ -174,6 +174,7 @@ def is_finished():
         mixer.music.stop()
         for cell in list_of_cells:
             if cell.value == MINE:
+                GAME_WIN = True
                 if not has_played_winner_sound:
                     winner_sound.play()
                     has_played_winner_sound = True
