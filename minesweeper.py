@@ -116,6 +116,8 @@ class Cell:
         return self.value == 0
 
     def check_cell(self):
+        """Checks the current Cell. If it is empty, it recursively checks all the neighbour cells.
+        If it is a mine, it calls the game_over method and the game ends. It also reveals the Cell."""
         if self.value == 0:
             self.reveal()
             neighbours = [(self.pos_x+i, self.pos_y+j) for i in range(-1, 2) for j in range(-1, 2) if (self.pos_x, self.pos_y) != (self.pos_x+i, self.pos_y+j) and is_in_grid(self.pos_x+i, self.pos_y+j, grid)]
