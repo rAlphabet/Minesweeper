@@ -241,6 +241,7 @@ flag_text = font.render("Flag", True, white)
 
 #Instructions
 def instructions():
+    """Draws text onto the screen (instructions and timer)."""
     pygame.draw.rect(screen, (0, 0, 0), (WIDTH - 200, 0, WIDTH, HEIGHT))
     stopwatch = font.render(f"TIME: {TIMER[1]}", True, white)
     screen.blit(stopwatch, (WIDTH - 175, 60))
