@@ -9,4 +9,7 @@ class Settings:
         """Changes the size (of the grid)."""
         self.size = new_size
     
+    def blit(self, img, width_of_grid):
+        screen.blit(img, (width_of_grid - self.x_left ,self.y))
+    
     
