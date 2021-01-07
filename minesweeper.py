@@ -236,7 +236,7 @@ winner_sound = mixer.Sound(FILES + r"\game_winner.wav")
 has_played_winner_sound = False
 
 #Font and text.
-font = pygame.font.SysFont("Arial", 28)
+font = pygame.font.SysFont("Arial", 28, bold=True)
 black = (0, 0, 0)
 space_text = font.render("SPACE:", True, black)
 restart_text = font.render("Restart", True, black)
