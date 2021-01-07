@@ -160,8 +160,7 @@ def reveal_all():
                 screen.blit(mine_image, (cell.x, cell.y))
 
 def is_finished():
-    """Checks if player has won.
-    If he has, it shows all the mines"""
+    """Checks if player has won. If he has, it shows all the mines."""
     ANY_HIDDEN = False
     global has_played_winner_sound
     global has_activated_timer
