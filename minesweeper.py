@@ -205,6 +205,7 @@ image_6 = pygame.image.load(FILES + r"\6.png")
 image_7 = pygame.image.load(FILES + r"\7.png")
 image_8 = pygame.image.load(FILES + r"\8.png")
 icon = pygame.image.load(FILES + r"\mine.png")
+settings_icon = pygame.image.load(FILES + r"\settings_icon.png")
 
 #Resizing the images.
 mine_image = pygame.transform.scale(mine_image, (OBJ_WIDTH, OBJ_HEIGHT))
