@@ -262,6 +262,8 @@ def start_cells(grid):
     return [[Cell((OBJ_WIDTH + 2)*x, (OBJ_HEIGHT + 2)*y, grid[y][x]) for x in range(dim(grid)["x"])] for y in range(dim(grid)["y"])]
 
 def start_list_cells(cells):
+    """Creates a list of cells that stores all the Cell objects.
+    List of cells is a 1-D list."""
     return [cells[j][i] for i in range(dim(grid)["x"]) for j in range(dim(grid)["y"])]
 
 #Game start and restart.
