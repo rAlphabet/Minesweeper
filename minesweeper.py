@@ -1,6 +1,7 @@
 import random
 import pygame
 from pygame import mixer
+from settings import Settings
 
 #Constants, variables and path for the game.
 MINE = "X"
