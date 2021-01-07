@@ -143,6 +143,7 @@ class Cell:
 
 #Functions for game functionality.
 def timer():
+    """Working stopwatch that counts seconds accordingly to the previously set FPS."""
     global TIMER
     TIMER[0] += 1
     if TIMER[0] == FPS:
