@@ -364,6 +364,7 @@ while running:
         timer()
     
     instructions()
+    Settings.blit(WIDTH)
     reveal_all()
     is_finished()
     pygame.display.update()
