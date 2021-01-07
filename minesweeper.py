@@ -89,6 +89,7 @@ class Cell:
         self.img = DICT[value]
    
     def blit(self):
+        """This method draws Cell content onto the screen."""
         if self.hidden:
             if self.marked:
                 pygame.draw.rect(screen, (0, 0, 250), (self.x, self.y, self.width, self.height))
