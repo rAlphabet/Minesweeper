@@ -15,7 +15,7 @@ class Settings:
         self.img = img
 
     def blit(self, width_of_grid):
-        """Draws an image 'img' onto the screen."""
+        """Draws an image onto the screen."""
         if self.img != None:
             screen.blit(self.img, (width_of_grid - self.x_left ,self.y))
     
