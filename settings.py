@@ -14,8 +14,9 @@ class Settings:
         """Sets the self.img to a specific image."""
         self.img = img
 
-    def blit(self, img, width_of_grid):
+    def blit(self, width_of_grid):
         """Draws an image 'img' onto the screen."""
-        screen.blit(img, (width_of_grid - self.x_left ,self.y))
+        if self.img != None:
+            screen.blit(self.img, (width_of_grid - self.x_left ,self.y))
     
     
