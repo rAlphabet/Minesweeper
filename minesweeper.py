@@ -133,9 +133,9 @@ class Cell:
     def game_over(self):
         """Ends the game with setting certain variables to their initial values."""
         global has_activated_timer
-        global GAME_WIN
+        global GAME_STOP
         has_activated_timer = False
-        GAME_WIN = True
+        GAME_STOP = True
         mixer.music.stop()
         kill_sound.play()
         for cell in list_of_cells:
@@ -154,9 +154,9 @@ def timer():
 
 def reveal_all():
     """Reveals all the mines."""
-    global GAME_WIN
+    global GAME_STOP
     if REVEALED:
-        GAME_WIN = True
+        GAME_STOP = True
         for cell in list_of_cells:
             if cell.value == MINE:
                 mixer.music.stop()
@@ -165,7 +165,7 @@ def reveal_all():
 
 def is_finished():
     """Checks if player has won. If he has, it shows all the mines."""
-    global GAME_WIN
+    global GAME_STOP
     ANY_HIDDEN = False
     global has_played_winner_sound
     global has_activated_timer
@@ -175,7 +175,7 @@ def is_finished():
                 ANY_HIDDEN = ANY_HIDDEN or cell.hidden
                 break
     if not ANY_HIDDEN:
-        GAME_WIN = True
+        GAME_STOP = True
         has_activated_timer = False
         mixer.music.stop()
         for cell in list_of_cells:
@@ -226,7 +226,7 @@ CLOCK = pygame.time.Clock()
 TIMER = [0, 0]
 has_activated_timer = False
 GAME_OVER = False
-GAME_WIN = False
+GAME_STOP = False
 REVEALED = False
 
 #Music and sounds.
@@ -280,7 +280,7 @@ def restart_game():
     global TIMER
     global has_activated_timer
     global GAME_OVER
-    global GAME_WIN
+    global GAME_STOP
     global REVEALED
     global has_played_winner_sound
     global grid
@@ -289,7 +289,7 @@ def restart_game():
     TIMER = [0, 0]
     has_activated_timer = False
     GAME_OVER = False
-    GAME_WIN = False
+    GAME_STOP = False
     REVEALED = False
     has_played_winner_sound = False
     grid = start_grid()
@@ -314,7 +314,7 @@ while running:
             elif event.key == pygame.K_RETURN:
                 REVEALED = True
         
-        if not GAME_WIN:
+        if not GAME_STOP:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 position = pygame.mouse.get_pos()
                 for cell in list_of_cells:
