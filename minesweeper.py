@@ -258,6 +258,7 @@ def start_grid():
     return prepare_grid(distribute_mines(create_grid(MS_WIDTH, MS_HEIGHT)))
 
 def start_cells(grid):
+    """Creates Cell objects corresponding to the grid."""
     return [[Cell((OBJ_WIDTH + 2)*x, (OBJ_HEIGHT + 2)*y, grid[y][x]) for x in range(dim(grid)["x"])] for y in range(dim(grid)["y"])]
 
 def start_list_cells(cells):
