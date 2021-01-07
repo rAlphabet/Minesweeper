@@ -75,6 +75,7 @@ def create_grid(width, height):
 
 #Objects - object Cell
 class Cell:
+    """Class to represent a cell."""
     def __init__(self, x, y, value, width = OBJ_WIDTH, height = OBJ_HEIGHT, hidden = True):
         self.x = x
         self.y = y
