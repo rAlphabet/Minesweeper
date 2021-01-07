@@ -154,8 +154,10 @@ def timer():
 
 def reveal_all():
     """Reveals all the mines."""
+    global has_activated_timer
     global GAME_STOP
     if REVEALED:
+        has_activated_timer = False
         GAME_STOP = True
         for cell in list_of_cells:
             if cell.value == MINE:
