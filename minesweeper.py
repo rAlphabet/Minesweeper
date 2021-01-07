@@ -151,6 +151,7 @@ def timer():
         TIMER[1] += 1
 
 def reveal_all():
+    """Reveals all the mines."""
     if REVEALED:
         for cell in list_of_cells:
             if cell.value == MINE:
