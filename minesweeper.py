@@ -74,7 +74,7 @@ def create_grid(width, height):
     return [[0 for i in range(width)] for j in range(height)]
 
 
-#Objects - object Cell
+#Objects (Cell and Settings)
 class Cell:
     """Class to represent a cell."""
     def __init__(self, x, y, value, width = OBJ_WIDTH, height = OBJ_HEIGHT, hidden = True):
@@ -142,6 +142,27 @@ class Cell:
         for cell in list_of_cells:
             if cell.value == MINE:
                 cell.reveal()
+
+class Settings:
+    """Class to represent settings for Minesweeper."""
+    def __init__(self):
+        self.size = 9
+        self.x_left = 164
+        self.y = 128
+        self.img = None
+    
+    def change_size(self, new_size):
+        """Changes the size (of the grid)."""
+        self.size = new_size
+    
+    def set_img(self, img):
+        """Sets the self.img to a specific image."""
+        self.img = img
+
+    def blit(self, width_of_grid):
+        """Draws an image onto the screen."""
+        if self.img != None:
+            screen.blit(self.img, (width_of_grid - self.x_left ,self.y))
 
 
 #Functions for game functionality.
