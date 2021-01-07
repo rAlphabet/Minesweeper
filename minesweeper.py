@@ -237,19 +237,19 @@ has_played_winner_sound = False
 
 #Font and text.
 font = pygame.font.SysFont("Arial", 28)
-white = (255, 255, 255)
-space_text = font.render("SPACE:", True, white)
-restart_text = font.render("Restart", True, white)
-enter_text = font.render("ENTER:", True, white)
-reveal_text = font.render("Show Mines", True, white)
-rmb_text = font.render("RMB:", True, white)
-flag_text = font.render("Flag", True, white)
+black = (0, 0, 0)
+space_text = font.render("SPACE:", True, black)
+restart_text = font.render("Restart", True, black)
+enter_text = font.render("ENTER:", True, black)
+reveal_text = font.render("Show Mines", True, black)
+rmb_text = font.render("RMB:", True, black)
+flag_text = font.render("Flag", True, black)
 
 #Instructions
 def instructions():
     """Draws text onto the screen (instructions and timer)."""
-    pygame.draw.rect(screen, (0, 0, 0), (WIDTH - 200, 0, WIDTH, HEIGHT))
-    stopwatch = font.render(f"TIME: {TIMER[1]}", True, white)
+    pygame.draw.rect(screen, (135, 135, 135), (WIDTH - 200, 0, WIDTH, HEIGHT))
+    stopwatch = font.render(f"TIME: {TIMER[1]}", True, black)
     screen.blit(stopwatch, (WIDTH - 175, 60))
     screen.blit(space_text, (WIDTH - 175, 170))
     screen.blit(restart_text, (WIDTH - 175, 202))
