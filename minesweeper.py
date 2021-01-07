@@ -308,18 +308,19 @@ while running:
                 restart_game()
             elif event.key == pygame.K_RETURN:
                 REVEALED = True
-
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            position = pygame.mouse.get_pos()
-            for cell in list_of_cells:
-                b = screen.blit(cell.img, (cell.x, cell.y))
-                if b.collidepoint(position):
-                    if event.button == 1:
-                        if not has_activated_timer:
-                            has_activated_timer = True
-                        cell.check_cell()
-                    elif event.button == 3:
-                        cell.marked = not cell.marked
+        
+        if not GAME_WIN:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                position = pygame.mouse.get_pos()
+                for cell in list_of_cells:
+                    b = screen.blit(cell.img, (cell.x, cell.y))
+                    if b.collidepoint(position):
+                        if event.button == 1:
+                            if not has_activated_timer:
+                                has_activated_timer = True
+                            cell.check_cell()
+                        elif event.button == 3:
+                            cell.marked = not cell.marked
 
     for cell in list_of_cells:
         cell.blit()
