@@ -108,6 +108,7 @@ class Cell:
         self.hidden = False
 
     def is_mine(self):
+        """Checks if this cell is a mine."""
         return self.value == MINE
 
     def is_empty(self):
