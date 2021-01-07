@@ -152,7 +152,9 @@ def timer():
 
 def reveal_all():
     """Reveals all the mines."""
+    global GAME_WIN
     if REVEALED:
+        GAME_WIN = True
         for cell in list_of_cells:
             if cell.value == MINE:
                 mixer.music.stop()
