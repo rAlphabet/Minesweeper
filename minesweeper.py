@@ -104,6 +104,7 @@ class Cell:
                 screen.blit(self.img, (self.x, self.y))
     
     def reveal(self):
+        """Reveals the hidden Cell."""
         self.hidden = False
 
     def is_mine(self):
