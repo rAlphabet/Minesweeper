@@ -10,6 +10,9 @@ class Settings:
         """Changes the size (of the grid)."""
         self.size = new_size
     
+    def set_img(self, img):
+        self.img = img
+
     def blit(self, img, width_of_grid):
         """Draws an image 'img' onto the screen."""
         screen.blit(img, (width_of_grid - self.x_left ,self.y))
