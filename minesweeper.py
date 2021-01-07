@@ -4,6 +4,7 @@ from pygame import mixer
 from settings import Settings
 
 #Constants, variables and path for the game.
+Settings = Settings()
 MINE = "X"
 FILES = r"C:\Users\Mojca\Desktop\gitProjects\Minesweeper\files"
 MS_WIDTH = MS_HEIGHT = 9
