@@ -254,6 +254,7 @@ def instructions():
 
 #Initialization of the grid and the cells.
 def start_grid():
+    """Creates the grid."""
     return prepare_grid(distribute_mines(create_grid(MS_WIDTH, MS_HEIGHT)))
 
 def start_cells(grid):
