@@ -320,9 +320,9 @@ while running:
             elif event.key == pygame.K_RETURN:
                 REVEALED = True
         
-        if not GAME_STOP:
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                position = pygame.mouse.get_pos()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            position = pygame.mouse.get_pos()
+            if not GAME_STOP:
                 for cell in list_of_cells:
                     b = screen.blit(cell.img, (cell.x, cell.y))
                     if b.collidepoint(position):
