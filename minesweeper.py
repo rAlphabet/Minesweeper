@@ -323,9 +323,10 @@ def remake_dict():
     global DICT
     DICT = {0: image_0, 1: image_1, 2: image_2, 3: image_3, 4: image_4, 5: image_5, 6: image_6, 7: image_7, 8: image_8, "X": mine_image}
 
-#Loading settings_icon into Settings object
+#Loading images and settings dictionary to Settings object.
 Settings.set_img(settings_icon)
 Settings.load_dict(SETTINGS_DICT)
+Settings.set_sound_img(sound_on, sound_off)
 
 #Screen, caption, icon, game variables and GUI settings.
 screen = pygame.display.set_mode(SIZE)
