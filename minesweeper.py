@@ -363,6 +363,7 @@ def restart_game():
     """Restarts the game with setting certain variables to their initial values
     and creating a new grid along with new Cell objects."""
     mixer.music.play(-1)
+    global screen
     global TIMER
     global has_activated_timer
     global GAME_OVER
@@ -372,6 +373,7 @@ def restart_game():
     global grid
     global cells
     global list_of_cells
+    screen = pygame.display.set_mode(SIZE)
     TIMER = [0, 0]
     has_activated_timer = False
     GAME_OVER = False
