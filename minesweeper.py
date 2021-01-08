@@ -60,6 +60,7 @@ FPS = 24
 
 #Function to reset some of the variables above.
 def reset_variables():
+    """Resets certain variables to new values."""
     global MS_WIDTH
     global MS_HEIGHT
     global OBJ_WIDTH
