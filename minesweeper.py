@@ -288,6 +288,20 @@ setting16 = pygame.transform.scale(setting16, (400, 400))
 setting20 = pygame.transform.scale(setting20, (400, 400))
 setting25 = pygame.transform.scale(setting25, (400, 400))
 
+#Function to resize images when needed.
+def resize_images():
+    global mine_image, image_0, image_1, image_2, image_3, image_4, image_5, image_6, image_7, image_8
+    mine_image = pygame.transform.scale(mine_image, (OBJ_WIDTH, OBJ_HEIGHT))
+    image_0 = pygame.transform.scale(image_0, (OBJ_WIDTH, OBJ_HEIGHT))
+    image_1 = pygame.transform.scale(image_1, (OBJ_WIDTH, OBJ_HEIGHT))
+    image_2 = pygame.transform.scale(image_2, (OBJ_WIDTH, OBJ_HEIGHT))
+    image_3 = pygame.transform.scale(image_3, (OBJ_WIDTH, OBJ_HEIGHT))
+    image_4 = pygame.transform.scale(image_4, (OBJ_WIDTH, OBJ_HEIGHT))
+    image_5 = pygame.transform.scale(image_5, (OBJ_WIDTH, OBJ_HEIGHT))
+    image_6 = pygame.transform.scale(image_6, (OBJ_WIDTH, OBJ_HEIGHT))
+    image_7 = pygame.transform.scale(image_7, (OBJ_WIDTH, OBJ_HEIGHT))
+    image_8 = pygame.transform.scale(image_8, (OBJ_WIDTH, OBJ_HEIGHT))
+
 #Creating a dictionary of values and corresponding images.
 DICT = {0: image_0, 1: image_1, 2: image_2, 3: image_3, 4: image_4, 5: image_5, 6: image_6, 7: image_7, 8: image_8, "X": mine_image}
 SETTINGS_DICT = {9: (setting9, (WIDTH - 175, 200)), 11: (setting11, (WIDTH - 175, 260)), 13: (setting13, (WIDTH - 175, 320)), 16: (setting16, (WIDTH - 175, 380)), 20: (setting20, (WIDTH - 175, 440)), 25: (setting25, (WIDTH - 175, 500)), "pos": (120, 100)}
