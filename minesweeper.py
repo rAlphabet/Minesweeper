@@ -327,6 +327,7 @@ SETTINGS_DICT = {9: (setting9, (WIDTH - 175, 200)), 11: (setting11, (WIDTH - 175
 
 #Function to remake DICT when needed.
 def remake_dict():
+    """Remakes DICT if necessary. It is used when images stored inside the DICT change."""
     global DICT
     DICT = {0: image_0, 1: image_1, 2: image_2, 3: image_3, 4: image_4, 5: image_5, 6: image_6, 7: image_7, 8: image_8, "X": mine_image}
 
