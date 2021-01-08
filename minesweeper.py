@@ -12,6 +12,7 @@ class Settings:
         self.img = None
         self.is_open = False
         self.dictionary = None
+        self.sound_img = {"on": None, "off": None}
     
     def change_size(self, new_size):
         """Changes the size (of the grid)."""
@@ -20,6 +21,11 @@ class Settings:
     def set_img(self, img):
         """Sets the self.img to a specific image."""
         self.img = img
+    
+    def set_sound_img(self, img_on, img_off):
+        """Sets the sound images to img_on and img_off."""
+        self.sound_img["on"] = img_on
+        self.sound_img["off"] = img_off
     
     def load_dict(self, dictionary):
         """Loads a dictionary to self.dictionary"""
