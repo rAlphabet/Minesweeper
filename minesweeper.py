@@ -10,6 +10,7 @@ class Settings:
         self.x_left = 164
         self.y = 128
         self.img = None
+        self.is_open = False
     
     def change_size(self, new_size):
         """Changes the size (of the grid)."""
@@ -23,6 +24,10 @@ class Settings:
         """Draws an image onto the screen."""
         if self.img != None:
             screen.blit(self.img, (width_of_grid - self.x_left ,self.y))
+    
+    def open_close(self):
+        """Open or closes settings."""
+        self.is_open = not self.is_open
 
 
 #Constants, variables and path for the game.
