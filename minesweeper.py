@@ -260,6 +260,8 @@ setting13 = pygame.image.load(FILES + r"\setting13.png")
 setting16 = pygame.image.load(FILES + r"\setting16.png")
 setting20 = pygame.image.load(FILES + r"\setting20.png")
 setting25 = pygame.image.load(FILES + r"\setting25.png")
+sound_on = pygame.image.load(FILES + r"\sound_on.png")
+sound_off = pygame.image.load(FILES + r"\sound_off.png")
 
 #Resizing the images.
 mine_image = pygame.transform.scale(mine_image, (OBJ_WIDTH, OBJ_HEIGHT))
