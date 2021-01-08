@@ -390,6 +390,10 @@ while running:
         
         if event.type == pygame.MOUSEBUTTONDOWN:
             position = pygame.mouse.get_pos()
+            s = screen.blit(Settings.img, (WIDTH - Settings.x_left, Settings.y))
+            if s.collidepoint(position):
+                if event.button == 1:
+                    Settings.is_open = not Settings.is_open
             if not GAME_STOP:
                 for cell in list_of_cells:
                     b = screen.blit(cell.img, (cell.x, cell.y))
@@ -401,16 +405,20 @@ while running:
                         elif event.button == 3:
                             cell.marked = not cell.marked
 
-    for cell in list_of_cells:
-        cell.blit()
+    if Settings.is_open:
+        Settings.show(WIDTH, HEIGHT)
+    else:
+        pygame.draw.rect(screen, (0, 0, 0), (0, 0, WIDTH, HEIGHT))
 
-    if has_activated_timer:
-        timer()
-    
-    instructions()
-    Settings.blit(WIDTH)
-    reveal_all()
-    is_finished()
-    Settings.show(WIDTH, HEIGHT)
+        for cell in list_of_cells:
+            cell.blit()
+
+        if has_activated_timer:
+            timer()
+        
+        instructions()
+        Settings.blit(WIDTH)
+        reveal_all()
+        is_finished()
     pygame.display.update()
 
