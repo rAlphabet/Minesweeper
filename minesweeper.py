@@ -10,7 +10,7 @@ class Settings:
         self.x_left = 164
         self.y = 128
         self.img = None
-        self.is_open = False
+        self.is_open = True
         self.dictionary = None
     
     def change_size(self, new_size):
@@ -262,16 +262,16 @@ image_6 = pygame.transform.scale(image_6, (OBJ_WIDTH, OBJ_HEIGHT))
 image_7 = pygame.transform.scale(image_7, (OBJ_WIDTH, OBJ_HEIGHT))
 image_8 = pygame.transform.scale(image_8, (OBJ_WIDTH, OBJ_HEIGHT))
 settings_icon = pygame.transform.scale(settings_icon, (46, 46))
-setting9 = pygame.transform.scale(setting9, (100, 100))
-setting11 = pygame.transform.scale(setting11, (100, 100))
-setting13 = pygame.transform.scale(setting13, (100, 100))
-setting16 = pygame.transform.scale(setting16, (100, 100))
-setting20 = pygame.transform.scale(setting20, (100, 100))
-setting25 = pygame.transform.scale(setting25, (100, 100))
+setting9 = pygame.transform.scale(setting9, (400, 400))
+setting11 = pygame.transform.scale(setting11, (400, 400))
+setting13 = pygame.transform.scale(setting13, (400, 400))
+setting16 = pygame.transform.scale(setting16, (400, 400))
+setting20 = pygame.transform.scale(setting20, (400, 400))
+setting25 = pygame.transform.scale(setting25, (400, 400))
 
 #Creating a dictionary of values and corresponding images.
 DICT = {0: image_0, 1: image_1, 2: image_2, 3: image_3, 4: image_4, 5: image_5, 6: image_6, 7: image_7, 8: image_8, "X": mine_image}
-SETTINGS_DICT = {9: (setting9, (25, 25)), 11: (setting11, (150, 25)), 13: (setting13, (275, 25)), 16: (setting16, (25, 200)), 20: (setting20, (150, 200)), 25: (setting25, (275, 200))}
+SETTINGS_DICT = {9: setting9, 11: setting11, 13: setting13, 16: setting16, 20: setting20, 25: setting25, "pos": (120, 100)}
 
 #Loading settings_icon into Settings object
 Settings.set_img(settings_icon)
@@ -396,5 +396,6 @@ while running:
     Settings.blit(WIDTH)
     reveal_all()
     is_finished()
+    Settings.show(WIDTH, HEIGHT)
     pygame.display.update()
 
