@@ -275,6 +275,7 @@ SETTINGS_DICT = {9: setting9, 11: setting11, 13: setting13, 16: setting16, 20: s
 
 #Loading settings_icon into Settings object
 Settings.set_img(settings_icon)
+Settings.load_dict(SETTINGS_DICT)
 
 #Screen, caption, icon, game variables and GUI settings.
 screen = pygame.display.set_mode(SIZE)
