@@ -28,6 +28,11 @@ class Settings:
     def open_close(self):
         """Open or closes settings."""
         self.is_open = not self.is_open
+    
+    def show(self, width_of_grid, height_of_grid):
+        if self.is_open:
+            pygame.draw.rect(screen, (125, 75, 255), (0, 0, width_of_grid, height_of_grid))
+            Settings.blit(width_of_grid)
 
 
 #Constants, variables and path for the game.
