@@ -281,6 +281,8 @@ setting13 = pygame.transform.scale(setting13, (400, 400))
 setting16 = pygame.transform.scale(setting16, (400, 400))
 setting20 = pygame.transform.scale(setting20, (400, 400))
 setting25 = pygame.transform.scale(setting25, (400, 400))
+sound_on = pygame.transform.scale(sound_on, (46, 46))
+sound_off = pygame.transform.scale(sound_off, (46, 46))
 
 #Function to resize images when needed.
 def resize_images():
