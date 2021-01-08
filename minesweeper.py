@@ -38,6 +38,13 @@ class Settings:
         if self.is_open:
             pygame.draw.rect(screen, (125, 75, 255), (0, 0, width_of_grid, height_of_grid))
             Settings.blit(width_of_grid)
+            screen.blit(self.dictionary[self.size][0], self.dictionary["pos"])
+            for d, text in zip(self.dictionary.items(), [text_9x9, text_11x11, text_13x13, text_16x16, text_20x20, text_25x25, None]):
+                if d[0] == self.size:
+                    pygame.draw.rect(screen, (0, 0, 0), (d[1][1][0] - 8, d[1][1][1] - 3, 96, 39))
+                    pygame.draw.rect(screen, (0, 255, 0), (d[1][1][0] - 5, d[1][1][1], 90, 33))
+                if d[0] != "pos":
+                    screen.blit(text, (d[1][1][0], d[1][1][1]))
 
 
 #Constants, variables and path for the game.
