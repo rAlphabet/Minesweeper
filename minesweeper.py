@@ -298,6 +298,7 @@ sound_off = pygame.transform.scale(sound_off, (46, 46))
 
 #Function to resize images when needed.
 def resize_images():
+    """Loads and resizes images."""
     global mine_image, image_0, image_1, image_2, image_3, image_4, image_5, image_6, image_7, image_8
     mine_image = pygame.image.load(FILES + r"/mine.png")
     image_0 = pygame.image.load(FILES + r"/0.png")
