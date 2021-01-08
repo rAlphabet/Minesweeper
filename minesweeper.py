@@ -438,6 +438,7 @@ while running:
                                 Settings.change_size(d[0])
                                 reset_variables()
                                 resize_images()
+                                remake_dict()
                                 restart_game()
 
             if not GAME_STOP and not Settings.is_open:
