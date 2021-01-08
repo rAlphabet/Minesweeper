@@ -292,6 +292,16 @@ setting25 = pygame.transform.scale(setting25, (400, 400))
 #Function to resize images when needed.
 def resize_images():
     global mine_image, image_0, image_1, image_2, image_3, image_4, image_5, image_6, image_7, image_8
+    mine_image = pygame.image.load(FILES + r"\mine.png")
+    image_0 = pygame.image.load(FILES + r"\0.png")
+    image_1 = pygame.image.load(FILES + r"\1.png")
+    image_2 = pygame.image.load(FILES + r"\2.png")
+    image_3 = pygame.image.load(FILES + r"\3.png")
+    image_4 = pygame.image.load(FILES + r"\4.png")
+    image_5 = pygame.image.load(FILES + r"\5.png")
+    image_6 = pygame.image.load(FILES + r"\6.png")
+    image_7 = pygame.image.load(FILES + r"\7.png")
+    image_8 = pygame.image.load(FILES + r"\8.png")
     mine_image = pygame.transform.scale(mine_image, (OBJ_WIDTH, OBJ_HEIGHT))
     image_0 = pygame.transform.scale(image_0, (OBJ_WIDTH, OBJ_HEIGHT))
     image_1 = pygame.transform.scale(image_1, (OBJ_WIDTH, OBJ_HEIGHT))
