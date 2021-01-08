@@ -401,7 +401,8 @@ def restart_game():
     """Restarts the game with setting certain variables to their initial values
     and creating a new grid along with new Cell objects."""
     global screen, TIMER, has_activated_timer, GAME_OVER, GAME_STOP, REVEALED, has_played_winner_sound, grid, cells, list_of_cells
-    mixer.music.play(-1)
+    if Settings.is_sound:
+        mixer.music.play(-1)
     screen = pygame.display.set_mode(SIZE)
     TIMER = [0, 0]
     has_activated_timer = False
@@ -455,6 +456,10 @@ while running:
                 if i.collidepoint(position):
                     if event.button == 1:
                         Settings.is_sound = not Settings.is_sound
+                        if Settings.is_sound:
+                            mixer.music.play(-1)
+                        else:
+                            mixer.music.stop()
 
             if not GAME_STOP and not Settings.is_open:
                 for cell in list_of_cells:
