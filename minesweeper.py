@@ -415,6 +415,8 @@ while running:
                         if g.collidepoint(position):
                             if event.button == 1:
                                 Settings.change_size(d[0])
+                                reset_variables()
+                                restart_game()
 
             if not GAME_STOP and not Settings.is_open:
                 for cell in list_of_cells:
