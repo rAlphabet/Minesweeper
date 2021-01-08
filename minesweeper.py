@@ -35,6 +35,7 @@ class Settings:
         self.is_open = not self.is_open
     
     def show(self, width_of_grid, height_of_grid):
+        """Displays settings menu onto the screen."""
         if self.is_open:
             pygame.draw.rect(screen, (125, 75, 255), (0, 0, width_of_grid, height_of_grid))
             Settings.blit(width_of_grid)
