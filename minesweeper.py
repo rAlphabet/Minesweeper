@@ -13,6 +13,7 @@ class Settings:
         self.is_open = False
         self.dictionary = None
         self.sound_img = {"on": None, "off": None}
+        self.is_sound = True
     
     def change_size(self, new_size):
         """Changes the size (of the grid)."""
