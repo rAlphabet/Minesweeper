@@ -257,6 +257,12 @@ image_6 = pygame.transform.scale(image_6, (OBJ_WIDTH, OBJ_HEIGHT))
 image_7 = pygame.transform.scale(image_7, (OBJ_WIDTH, OBJ_HEIGHT))
 image_8 = pygame.transform.scale(image_8, (OBJ_WIDTH, OBJ_HEIGHT))
 settings_icon = pygame.transform.scale(settings_icon, (46, 46))
+setting9 = pygame.transform.scale(setting9, (100, 100))
+setting11 = pygame.transform.scale(setting11, (100, 100))
+setting13 = pygame.transform.scale(setting13, (100, 100))
+setting16 = pygame.transform.scale(setting16, (100, 100))
+setting20 = pygame.transform.scale(setting20, (100, 100))
+setting25 = pygame.transform.scale(setting25, (100, 100))
 
 #Loading settings_icon into Settings object
 Settings.set_img(settings_icon)
