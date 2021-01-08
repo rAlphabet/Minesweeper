@@ -448,6 +448,11 @@ while running:
                                 resize_images()
                                 remake_dict()
                                 restart_game()
+                
+                i = screen.blit(sound_on, (WIDTH - 100, 40))
+                if i.collidepoint(position):
+                    if event.button == 1:
+                        Settings.is_sound = not Settings.is_sound
 
             if not GAME_STOP and not Settings.is_open:
                 for cell in list_of_cells:
