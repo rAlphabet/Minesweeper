@@ -11,6 +11,7 @@ class Settings:
         self.y = 128
         self.img = None
         self.is_open = False
+        self.dictionary = None
     
     def change_size(self, new_size):
         """Changes the size (of the grid)."""
@@ -19,6 +20,10 @@ class Settings:
     def set_img(self, img):
         """Sets the self.img to a specific image."""
         self.img = img
+    
+    def load_dict(self, dictionary):
+        """Loads a dictionary to self.dictionary"""
+        self.dictionary = dictionary
 
     def blit(self, width_of_grid):
         """Draws an image onto the screen."""
