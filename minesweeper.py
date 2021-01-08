@@ -53,6 +53,9 @@ class Settings:
                     pygame.draw.rect(screen, (0, 255, 0), (d[1][1][0] - 5, d[1][1][1], 90, 33))
                 if d[0] != "pos":
                     screen.blit(text, (d[1][1][0], d[1][1][1]))
+            screen.blit(self.sound_img["on"], (width_of_grid - 100, 40))
+            if not self.is_sound:
+                screen.blit(self.sound_img["off"], (width_of_grid - 100, 40))
 
 
 #Constants, variables and path for the game.
