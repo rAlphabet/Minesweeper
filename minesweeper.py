@@ -304,6 +304,14 @@ reveal_text = font.render("Show Mines", True, black)
 rmb_text = font.render("RMB:", True, black)
 flag_text = font.render("Flag", True, black)
 
+#Text for settings.
+text_9x9 = font.render("9 x 9", True, black)
+text_11x11 = font.render("11 x 11", True, black)
+text_13x13 = font.render("13 x 13", True, black)
+text_16x16 = font.render("16 x 16", True, black)
+text_20x20 = font.render("20 x 20", True, black)
+text_25x25 = font.render("25 x 25", True, black)
+
 #Instructions
 def instructions():
     """Draws text onto the screen (instructions and timer)."""
