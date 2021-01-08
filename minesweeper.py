@@ -57,6 +57,19 @@ SIZE = WIDTH, HEIGHT = MS_WIDTH * (OBJ_WIDTH + 2) + 200, MS_HEIGHT * (OBJ_HEIGHT
 CAPTION = "Minesweeper"
 FPS = 24
 
+#Function to reset some of the variables above.
+def reset_variables():
+    global MS_WIDTH
+    global MS_HEIGHT
+    global OBJ_WIDTH
+    global OBJ_HEIGHT
+    global WIDTH
+    global HEIGHT
+    global SIZE
+    MS_WIDTH = MS_HEIGHT = Settings.size
+    OBJ_WIDTH = OBJ_HEIGHT = round(64 * (1 / (MS_WIDTH / 9)))
+    SIZE = WIDTH, HEIGHT = MS_WIDTH * (OBJ_WIDTH + 2) + 200, MS_HEIGHT * (OBJ_HEIGHT + 2) - 2
+
 
 #Algorithms for minesweeper's grid.
 def is_mine(x, y, grid):
