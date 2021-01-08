@@ -61,13 +61,7 @@ FPS = 24
 #Function to reset some of the variables above.
 def reset_variables():
     """Resets certain variables to new values."""
-    global MS_WIDTH
-    global MS_HEIGHT
-    global OBJ_WIDTH
-    global OBJ_HEIGHT
-    global WIDTH
-    global HEIGHT
-    global SIZE
+    global MS_WIDTH, MS_HEIGHT, OBJ_WIDTH, OBJ_HEIGHT, WIDTH, HEIGHT, SIZE
     MS_WIDTH = MS_HEIGHT = Settings.size
     OBJ_WIDTH = OBJ_HEIGHT = round(64 * (1 / (MS_WIDTH / 9)))
     SIZE = WIDTH, HEIGHT = MS_WIDTH * (OBJ_WIDTH + 2) + 200, MS_HEIGHT * (OBJ_HEIGHT + 2) - 2
@@ -191,8 +185,7 @@ class Cell:
 
     def game_over(self):
         """Ends the game with setting certain variables to their initial values."""
-        global has_activated_timer
-        global GAME_STOP
+        global has_activated_timer, GAME_STOP
         has_activated_timer = False
         GAME_STOP = True
         mixer.music.stop()
@@ -213,8 +206,7 @@ def timer():
 
 def reveal_all():
     """Reveals all the mines."""
-    global has_activated_timer
-    global GAME_STOP
+    global has_activated_timer, GAME_STOP
     if REVEALED:
         has_activated_timer = False
         GAME_STOP = True
@@ -226,10 +218,8 @@ def reveal_all():
 
 def is_finished():
     """Checks if player has won. If he has, it shows all the mines."""
-    global GAME_STOP
+    global GAME_STOP, has_played_winner_sound, has_activated_timer
     ANY_HIDDEN = False
-    global has_played_winner_sound
-    global has_activated_timer
     for cell in list_of_cells:
         if cell.value != MINE:
             if cell.hidden:
@@ -393,17 +383,8 @@ def start_list_cells(cells):
 def restart_game():
     """Restarts the game with setting certain variables to their initial values
     and creating a new grid along with new Cell objects."""
+    global screen, TIMER, has_activated_timer, GAME_OVER, GAME_STOP, REVEALED, has_played_winner_sound, grid, cells, list_of_cells
     mixer.music.play(-1)
-    global screen
-    global TIMER
-    global has_activated_timer
-    global GAME_OVER
-    global GAME_STOP
-    global REVEALED
-    global has_played_winner_sound
-    global grid
-    global cells
-    global list_of_cells
     screen = pygame.display.set_mode(SIZE)
     TIMER = [0, 0]
     has_activated_timer = False
