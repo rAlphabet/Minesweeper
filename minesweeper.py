@@ -271,7 +271,7 @@ setting25 = pygame.transform.scale(setting25, (400, 400))
 
 #Creating a dictionary of values and corresponding images.
 DICT = {0: image_0, 1: image_1, 2: image_2, 3: image_3, 4: image_4, 5: image_5, 6: image_6, 7: image_7, 8: image_8, "X": mine_image}
-SETTINGS_DICT = {9: setting9, 11: setting11, 13: setting13, 16: setting16, 20: setting20, 25: setting25, "pos": (120, 100)}
+SETTINGS_DICT = {9: (setting9, (WIDTH - 175, 200)), 11: (setting11, (WIDTH - 175, 260)), 13: (setting13, (WIDTH - 175, 320)), 16: (setting16, (WIDTH - 175, 380)), 20: (setting20, (WIDTH - 175, 440)), 25: (setting25, (WIDTH - 175, 500)), "pos": (120, 100)}
 
 #Loading settings_icon into Settings object
 Settings.set_img(settings_icon)
