@@ -390,10 +390,19 @@ while running:
         
         if event.type == pygame.MOUSEBUTTONDOWN:
             position = pygame.mouse.get_pos()
+
             s = screen.blit(Settings.img, (WIDTH - Settings.x_left, Settings.y))
             if s.collidepoint(position):
                 if event.button == 1:
                     Settings.is_open = not Settings.is_open
+            
+            for d, text in zip(Settings.dictionary.items(), [text_9x9, text_11x11, text_13x13, text_16x16, text_20x20, text_25x25, None]):
+                if d[0] != "pos":
+                    g = screen.blit(text, (d[1][1][0], d[1][1][1]))
+                    if g.collidepoint(position):
+                        if event.button == 1:
+                            Settings.change_size(d[0])
+
             if not GAME_STOP:
                 for cell in list_of_cells:
                     b = screen.blit(cell.img, (cell.x, cell.y))
