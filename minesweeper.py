@@ -10,7 +10,7 @@ class Settings:
         self.x_left = 164
         self.y = 128
         self.img = None
-        self.is_open = True #
+        self.is_open = False
         self.dictionary = None
     
     def change_size(self, new_size):
