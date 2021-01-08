@@ -134,7 +134,7 @@ def create_grid(width, height):
 #Cell object
 class Cell:
     """Class to represent a cell."""
-    def __init__(self, x, y, value, width = OBJ_WIDTH, height = OBJ_HEIGHT, hidden = True):
+    def __init__(self, x, y, value, width, height, hidden = True):
         self.x = x
         self.y = y
         self.pos_x = x // (OBJ_WIDTH + 2)
@@ -381,7 +381,7 @@ def start_grid():
 
 def start_cells(grid):
     """Creates Cell objects corresponding to the grid."""
-    return [[Cell((OBJ_WIDTH + 2)*x, (OBJ_HEIGHT + 2)*y, grid[y][x]) for x in range(dim(grid)["x"])] for y in range(dim(grid)["y"])]
+    return [[Cell((OBJ_WIDTH + 2)*x, (OBJ_HEIGHT + 2)*y, grid[y][x], OBJ_WIDTH, OBJ_HEIGHT) for x in range(dim(grid)["x"])] for y in range(dim(grid)["y"])]
 
 def start_list_cells(cells):
     """Creates a list of cells that stores all the Cell objects.
