@@ -254,16 +254,6 @@ def is_finished():
 pygame.init()
 
 #Loading images to pygame.
-mine_image = pygame.image.load(FILES + r"/mine.png")
-image_0 = pygame.image.load(FILES + r"/0.png")
-image_1 = pygame.image.load(FILES + r"/1.png")
-image_2 = pygame.image.load(FILES + r"/2.png")
-image_3 = pygame.image.load(FILES + r"/3.png")
-image_4 = pygame.image.load(FILES + r"/4.png")
-image_5 = pygame.image.load(FILES + r"/5.png")
-image_6 = pygame.image.load(FILES + r"/6.png")
-image_7 = pygame.image.load(FILES + r"/7.png")
-image_8 = pygame.image.load(FILES + r"/8.png")
 icon = pygame.image.load(FILES + r"/mine.png")
 settings_icon = pygame.image.load(FILES + r"/settings_icon.png")
 setting9 = pygame.image.load(FILES + r"/setting9.png")
@@ -276,16 +266,6 @@ sound_on = pygame.image.load(FILES + r"/sound_on.png")
 sound_off = pygame.image.load(FILES + r"/sound_off.png")
 
 #Resizing the images.
-mine_image = pygame.transform.scale(mine_image, (OBJ_WIDTH, OBJ_HEIGHT))
-image_0 = pygame.transform.scale(image_0, (OBJ_WIDTH, OBJ_HEIGHT))
-image_1 = pygame.transform.scale(image_1, (OBJ_WIDTH, OBJ_HEIGHT))
-image_2 = pygame.transform.scale(image_2, (OBJ_WIDTH, OBJ_HEIGHT))
-image_3 = pygame.transform.scale(image_3, (OBJ_WIDTH, OBJ_HEIGHT))
-image_4 = pygame.transform.scale(image_4, (OBJ_WIDTH, OBJ_HEIGHT))
-image_5 = pygame.transform.scale(image_5, (OBJ_WIDTH, OBJ_HEIGHT))
-image_6 = pygame.transform.scale(image_6, (OBJ_WIDTH, OBJ_HEIGHT))
-image_7 = pygame.transform.scale(image_7, (OBJ_WIDTH, OBJ_HEIGHT))
-image_8 = pygame.transform.scale(image_8, (OBJ_WIDTH, OBJ_HEIGHT))
 settings_icon = pygame.transform.scale(settings_icon, (46, 46))
 setting9 = pygame.transform.scale(setting9, (400, 400))
 setting11 = pygame.transform.scale(setting11, (400, 400))
@@ -320,6 +300,9 @@ def resize_images():
     image_6 = pygame.transform.scale(image_6, (OBJ_WIDTH, OBJ_HEIGHT))
     image_7 = pygame.transform.scale(image_7, (OBJ_WIDTH, OBJ_HEIGHT))
     image_8 = pygame.transform.scale(image_8, (OBJ_WIDTH, OBJ_HEIGHT))
+
+#Loading and resizing images that will be used as cells.
+resize_images()
 
 #Creating a dictionary of values and corresponding images.
 DICT = {0: image_0, 1: image_1, 2: image_2, 3: image_3, 4: image_4, 5: image_5, 6: image_6, 7: image_7, 8: image_8, "X": mine_image}
