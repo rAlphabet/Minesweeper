@@ -375,7 +375,11 @@ text_25x25 = font.render("25 x 25", True, black)
 def instructions():
     """Draws text onto the screen (instructions and timer)."""
     pygame.draw.rect(screen, (125, 75, 255), (WIDTH - 200, 0, WIDTH, HEIGHT))
-    stopwatch = font.render(f"TIME: {TIMER[1]}", True, black)
+    if TIMER[1] == 42:
+        #Easter egg.
+        stopwatch = font.render("TIME: foo 42", True, black)
+    else:
+        stopwatch = font.render(f"TIME: {TIMER[1]}", True, black)
     screen.blit(stopwatch, (WIDTH - 175, 50))
     screen.blit(space_text, (WIDTH - 175, 226))
     screen.blit(restart_text, (WIDTH - 175, 258))
