@@ -60,15 +60,15 @@ class Settings:
 
 
 #Constants, variables and path for the game.
-Settings = Settings()
 MINE = "X"
+CAPTION = "Minesweeper"
+FPS = 24
 directory_path = os.getcwd()
 FILES = directory_path + r"/files"
+Settings = Settings()
 MS_WIDTH = MS_HEIGHT = Settings.size
 OBJ_WIDTH = OBJ_HEIGHT = round(64 * (1 / (MS_WIDTH / 9)))
 SIZE = WIDTH, HEIGHT = MS_WIDTH * (OBJ_WIDTH + 2) + 200, MS_HEIGHT * (OBJ_HEIGHT + 2) - 2
-CAPTION = "Minesweeper"
-FPS = 24
 
 #Function to reset some of the variables above.
 def reset_variables():
