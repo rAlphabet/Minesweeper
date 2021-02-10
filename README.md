@@ -22,6 +22,8 @@ Implementation of Minesweeper in python using module pygame.
 
 ### **How to play**
 
+Read more in depth about Minesweeper [here](https://en.wikipedia.org/wiki/Minesweeper_(video_game) "Go to the website").
+
 Player has to reveal all the cells excluding the mines.\
 The game ends if player either:
 - clicks on the mine,
@@ -50,3 +52,15 @@ Inside settings' menu, player can:
 
 - Spacebar
     - Used to restart the game.
+
+---
+
+## **Sources**
+
+In the making of Minesweeper I used the following sources:
+
+- https://en.wikipedia.org/wiki/Minesweeper_(video_game)
+
+- https://docs.python.org/3/
+
+- https://www.pygame.org/docs/
