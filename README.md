@@ -65,4 +65,5 @@ In the making of Minesweeper I used the following sources:
 
 - https://www.pygame.org/docs/
 
-All the images used in the project are from [flaticon](https://www.flaticon.com/ "Go to the website").
+All the images used in the project are from [flaticon](https://www.flaticon.com/ "Go to the website").\
+All the sounds used in the project are from [freesound](https://freesound.org/ "Go to the website").
