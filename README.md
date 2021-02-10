@@ -31,7 +31,7 @@ The game ends if player either:
 Control panel is located on the right side of the screen.\
 To enter / exit settings' menu, player has to click on the settings wheel.
 
-![Settings wheel](settings_icon.png)
+![Settings wheel](files/settings_readme.png)
 
 Inside settings' menu, player can:
 - turn music on / off,
