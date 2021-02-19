@@ -19,6 +19,14 @@ class Settings:
     def make(self):
         return self
     
+    def load_dict(self):
+        self.dictionary = {9: (setting9, (Game.WIDTH - 175, 200)), 11: (setting11, (Game.WIDTH - 175, 260)), 13: (setting13, (Game.WIDTH - 175, 320)), 16: (setting16, (Game.WIDTH - 175, 380)), 20: (setting20, (Game.WIDTH - 175, 440)), 25: (setting25, (Game.WIDTH - 175, 500)), "pos": (120, 100)}
+    
+    def restart(self):
+        Settings.set_img(settings_icon)
+        Settings.load_dict()
+        Settings.set_sound_img(sound_on, sound_off)
+    
     def change_size(self, new_size):
         """Changes the size (of the grid)."""
         self.size = new_size
@@ -31,10 +39,6 @@ class Settings:
         """Sets the sound images to img_on and img_off."""
         self.sound_img["on"] = img_on
         self.sound_img["off"] = img_off
-    
-    def load_dict(self, dictionary):
-        """Loads a dictionary to self.dictionary"""
-        self.dictionary = dictionary
 
     def blit(self, width_of_grid):
         """Draws an image onto the screen."""
@@ -319,13 +323,8 @@ sound_on = resize_image(Game.FILES + r"/sound_on.png", 46, 46)
 sound_off = resize_image(Game.FILES + r"/sound_off.png", 46, 46)
 
 #Creating a dictionary of values and corresponding images.
-SETTINGS_DICT = {9: (setting9, (Game.WIDTH - 175, 200)), 11: (setting11, (Game.WIDTH - 175, 260)), 13: (setting13, (Game.WIDTH - 175, 320)), 16: (setting16, (Game.WIDTH - 175, 380)), 20: (setting20, (Game.WIDTH - 175, 440)), 25: (setting25, (Game.WIDTH - 175, 500)), "pos": (120, 100)}
+Settings.restart()
 Game.remake_dict()
-
-#Loading images and settings dictionary to Settings object.
-Settings.set_img(settings_icon)
-Settings.load_dict(SETTINGS_DICT)
-Settings.set_sound_img(sound_on, sound_off)
 
 #Screen, caption, icon, game variables and GUI settings.
 screen = pygame.display.set_mode(Game.SIZE)
@@ -408,6 +407,7 @@ while running:
                             if event.button == 1:
                                 Settings = Settings.make()
                                 Settings.__init__(d[0])
+                                Settings.restart()
                                 Game = Game.make()
                                 Game.__init__()
                                 Game.remake_dict()
