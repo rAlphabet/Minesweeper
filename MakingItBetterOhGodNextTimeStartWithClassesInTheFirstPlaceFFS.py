@@ -252,6 +252,22 @@ class Game:
             self.TIMER[0] = 0
             self.TIMER[1] += 1
 
+    def instructions(self):
+        """Draws text onto the screen (instructions and timer)."""
+        pygame.draw.rect(screen, (125, 75, 255), (self.WIDTH - 200, 0, self.WIDTH, self.HEIGHT))
+        if self.TIMER[1] == 42:
+            #Easter egg.
+            stopwatch = font.render("TIME: foo 42", True, black)
+        else:
+            stopwatch = font.render(f"TIME: {self.TIMER[1]}", True, black)
+        screen.blit(stopwatch, (self.WIDTH - 175, 50))
+        screen.blit(space_text, (self.WIDTH - 175, 226))
+        screen.blit(restart_text, (self.WIDTH - 175, 258))
+        screen.blit(rmb_text, (self.WIDTH - 175, 353))
+        screen.blit(flag_text, (self.WIDTH - 175, 385))
+        screen.blit(enter_text, (self.WIDTH - 175, 480))
+        screen.blit(reveal_text, (self.WIDTH - 175, 512))
+
     def reveal_all(self):
         """Reveals all the mines."""
         if self.REVEALED:
@@ -261,7 +277,7 @@ class Game:
                 if cell.value == self.MINE:
                     mixer.music.stop()
                     pygame.draw.rect(screen, (180, 180, 180), (cell.x, cell.y, cell.width, cell.height))
-                    screen.blit(mine_image, (cell.x, cell.y))
+                    screen.blit(self.DICT["X"], (cell.x, cell.y))
 
     def is_finished(self):
         """Checks if player has won. If he has, it shows all the mines."""
@@ -305,16 +321,6 @@ def resize_image(path, w, h):
     temp = pygame.image.load(path)
     return pygame.transform.scale(temp, (w, h))
 
-mine_image = resize_image(Game.FILES + r"/mine.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
-image_0 = resize_image(Game.FILES + r"/0.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
-image_1 = resize_image(Game.FILES + r"/1.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
-image_2 = resize_image(Game.FILES + r"/2.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
-image_3 = resize_image(Game.FILES + r"/3.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
-image_4 = resize_image(Game.FILES + r"/4.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
-image_5 = resize_image(Game.FILES + r"/5.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
-image_6 = resize_image(Game.FILES + r"/6.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
-image_7 = resize_image(Game.FILES + r"/7.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
-image_8 = resize_image(Game.FILES + r"/8.png", Game.OBJ_WIDTH, Game.OBJ_HEIGHT)
 settings_icon = resize_image(Game.FILES + r"/settings_icon.png", 46, 46)
 setting9 = resize_image(Game.FILES + r"/setting9.png", 400, 400)
 setting11 = resize_image(Game.FILES + r"/setting11.png", 400, 400)
@@ -359,23 +365,6 @@ text_16x16 = font.render("16 x 16", True, black)
 text_20x20 = font.render("20 x 20", True, black)
 text_25x25 = font.render("25 x 25", True, black)
 
-#Instructions
-def instructions():
-    """Draws text onto the screen (instructions and timer)."""
-    pygame.draw.rect(screen, (125, 75, 255), (Game.WIDTH - 200, 0, Game.WIDTH, Game.HEIGHT))
-    if Game.TIMER[1] == 42:
-        #Easter egg.
-        stopwatch = font.render("TIME: foo 42", True, black)
-    else:
-        stopwatch = font.render(f"TIME: {Game.TIMER[1]}", True, black)
-    screen.blit(stopwatch, (Game.WIDTH - 175, 50))
-    screen.blit(space_text, (Game.WIDTH - 175, 226))
-    screen.blit(restart_text, (Game.WIDTH - 175, 258))
-    screen.blit(rmb_text, (Game.WIDTH - 175, 353))
-    screen.blit(flag_text, (Game.WIDTH - 175, 385))
-    screen.blit(enter_text, (Game.WIDTH - 175, 480))
-    screen.blit(reveal_text, (Game.WIDTH - 175, 512))
-
 
 #Game loop.
 
@@ -389,6 +378,8 @@ while running:
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
+                Game = Game.make()
+                Game.__init__()
                 Game.restart()
             elif event.key == pygame.K_RETURN:
                 Game.REVEALED = True
@@ -412,7 +403,6 @@ while running:
                                 Settings.restart()
                                 Game = Game.make()
                                 Game.__init__()
-                                Game.remake_dict()
                                 Game.restart()
                 
                 i = screen.blit(sound_on, (Game.WIDTH - 100, 40))
@@ -446,7 +436,7 @@ while running:
         if Game.has_activated_timer:
             Game.timer()
         
-        instructions()
+        Game.instructions()
         Settings.blit(Game.WIDTH)
         Game.reveal_all()
         Game.is_finished()
