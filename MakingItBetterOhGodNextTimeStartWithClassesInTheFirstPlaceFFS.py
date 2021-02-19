@@ -222,7 +222,7 @@ class Game:
         self.OBJ_WIDTH = self.OBJ_HEIGHT = round(64 * (1 / (self.MS_WIDTH / 9)))
         self.SIZE = self.WIDTH, self.HEIGHT = self.MS_WIDTH * (self.OBJ_WIDTH + 2) + 200, self.MS_HEIGHT * (self.OBJ_HEIGHT + 2) - 2
         self.TIMER = [0, 0]
-        self.DICT = None
+        self.DICT = {}
         self.GAME_STOP = False
         self.has_activated_timer = True
         self.REVEALED = False
@@ -241,7 +241,9 @@ class Game:
         self.SIZE = self.WIDTH, self.HEIGHT = self.MS_WIDTH * (self.OBJ_WIDTH + 2) + 200, self.MS_HEIGHT * (self.OBJ_HEIGHT + 2) - 2
     
     def remake_dict(self):
-        self.DICT = {0: image_0, 1: image_1, 2: image_2, 3: image_3, 4: image_4, 5: image_5, 6: image_6, 7: image_7, 8: image_8, "X": mine_image}
+        for i in range(9):
+            self.DICT[i] = resize_image(self.FILES + "\\" + f"{i}.png", self.OBJ_WIDTH, self.OBJ_HEIGHT)
+        self.DICT["X"] = resize_image(self.FILES + r"\mine.png", self.OBJ_WIDTH, self.OBJ_HEIGHT)
 
     def timer(self):
         """Working stopwatch that counts seconds accordingly to the previously set Game.FPS."""
@@ -282,6 +284,7 @@ class Game:
                     screen.blit(mine_image, (cell.x, cell.y))
     
     def restart(self):
+        self.remake_dict()
         self.grid = create_grid(self.MS_WIDTH, self.MS_HEIGHT)
         self.cells = start_cells(self.grid, self.OBJ_WIDTH, self.OBJ_HEIGHT)
         self.loc()
@@ -324,7 +327,7 @@ sound_off = resize_image(Game.FILES + r"/sound_off.png", 46, 46)
 
 #Creating a dictionary of values and corresponding images.
 Settings.restart()
-Game.remake_dict()
+Game.restart()
 
 #Screen, caption, icon, game variables and GUI settings.
 screen = pygame.display.set_mode(Game.SIZE)
@@ -375,7 +378,6 @@ def instructions():
 
 
 #Game loop.
-Game.restart()
 
 running = True
 while running:
