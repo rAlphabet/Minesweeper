@@ -13,7 +13,7 @@ Implementation of Minesweeper in python using module pygame.
 
 ## **How to use**
 
-You can just download and run the installer: "Minesweeper_by_Alphaber.exe")
+You can just download and run the installer: "Minesweeper_by_Alphabet.exe")
 
 ### **How to run**
 
